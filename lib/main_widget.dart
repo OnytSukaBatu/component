@@ -10,7 +10,6 @@ class MainWidget {
     fontSize: 14,
     fontWeight: FontWeight.normal,
     letterSpacing: 0.25,
-    height: 1,
   );
 
   Widget text(
@@ -171,6 +170,8 @@ class MainWidget {
     bool? filled,
     InputBorder? focusedBorder,
     InputBorder? focusedErrorBorder,
+    FloatingLabelAlignment? floatingLabelAlignment,
+    TextStyle? floatingLabelStyle,
     Widget? helper,
     int? helperMaxLines,
     TextStyle? helperStyle,
@@ -208,6 +209,28 @@ class MainWidget {
   }) {
     double dCursorWidth = 2.0;
     String dObscuringCharacter = '•';
+
+    double dSmallFontSize = 12;
+
+    TextStyle dCounterStyle = _dStyle.copyWith(
+      fontSize: dSmallFontSize,
+    );
+
+    TextStyle dErrorStyle = _dStyle.copyWith(
+      fontSize: dSmallFontSize,
+    );
+
+    TextStyle dFloatingLabelStyle = _dStyle.copyWith(
+      fontSize: dSmallFontSize,
+    );
+
+    TextStyle dHelperStyle = _dStyle.copyWith(
+      fontSize: dSmallFontSize,
+    );
+
+    TextStyle dHintStyle = _dStyle.copyWith();
+
+    TextStyle dLabelStyle = _dStyle.copyWith();
 
     void dOnTapOutside(_) {
       FocusManager.instance.primaryFocus?.unfocus();
@@ -281,31 +304,33 @@ class MainWidget {
       decoration: (decoration ?? InputDecoration()).copyWith(
         contentPadding: contentPadding,
         counter: counter,
-        counterStyle: counterStyle,
+        counterStyle: counterStyle ?? dCounterStyle,
         counterText: counterText,
         disabledBorder: disabledBorder ?? dDisabledBorder,
         enabledBorder: enabledBorder ?? dEnabledBorder,
         error: error,
         errorBorder: errorBorder ?? dErrorBorder,
         errorMaxLines: errorMaxLines,
-        errorStyle: errorStyle,
+        errorStyle: errorStyle ?? dErrorStyle,
         errorText: errorText,
         fillColor: fillColor,
         filled: filled,
         focusedBorder: focusedBorder ?? dFocusedBorder,
         focusedErrorBorder: focusedErrorBorder ?? dFocusedErrorBorder,
+        floatingLabelAlignment: floatingLabelAlignment,
+        floatingLabelStyle: floatingLabelStyle ?? dFloatingLabelStyle,
         helper: helper,
         helperMaxLines: helperMaxLines,
-        helperStyle: helperStyle,
+        helperStyle: helperStyle ?? dHelperStyle,
         helperText: helperText,
         hint: hint,
         hintMaxLines: hintMaxLines,
-        hintStyle: hintStyle,
+        hintStyle: hintStyle ?? dHintStyle,
         hintText: hintText,
         icon: icon,
         isDense: isDense,
         label: label,
-        labelStyle: labelStyle,
+        labelStyle: labelStyle ?? dLabelStyle,
         labelText: labelText,
         prefix: prefix,
         suffix: suffix,

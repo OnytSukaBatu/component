@@ -1,6 +1,6 @@
 import 'dart:developer' as dev;
 
-import 'package:main/main.dart';
+import 'package:get/get.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

@@ -34,9 +34,7 @@ mixin OverlayFunction {
       side: borderSide ?? dBorderSide,
     );
 
-    BuildContext? context = navigatorKey.currentContext;
-
-    return ScaffoldMessenger.of(context!).showSnackBar(
+    return ScaffoldMessenger.of(Get.context!).showSnackBar(
       SnackBar(
         content: content,
         action: action,
@@ -87,10 +85,8 @@ mixin OverlayFunction {
       side: borderSide ?? dBorderSide,
     );
 
-    BuildContext? context = navigatorKey.currentContext;
-
     return showDialog(
-      context: context!,
+      context: Get.context!,
       builder: (BuildContext context) {
         return PopScope(
           canPop: canPop,
@@ -149,10 +145,8 @@ mixin OverlayFunction {
       side: borderSide ??= dBorderSide,
     );
 
-    BuildContext? context = navigatorKey.currentContext;
-
     return showDialog(
-      context: context!,
+      context: Get.context!,
       builder: (BuildContext context) {
         return PopScope(
           canPop: canPop,
@@ -189,10 +183,8 @@ mixin OverlayFunction {
       topRight: Radius.circular(8.0),
     );
 
-    BuildContext? context = navigatorKey.currentContext;
-
     return showModalBottomSheet(
-      context: context!,
+      context: Get.context!,
       builder: (BuildContext context) {
         return Container(
           width: width,
@@ -216,10 +208,8 @@ mixin OverlayFunction {
   }) {
     Color dBarrierColor = Colors.grey.withValues(alpha: .25);
 
-    BuildContext? context = navigatorKey.currentContext;
-
     return showCupertinoModalPopup(
-      context: context!,
+      context: Get.context!,
       builder: (BuildContext context) {
         return CupertinoActionSheet(
           actions: actions,
@@ -242,10 +232,8 @@ mixin OverlayFunction {
   }) {
     Color dBarrierColor = Colors.grey.withValues(alpha: .25);
 
-    BuildContext? context = navigatorKey.currentContext;
-
     return showCupertinoDialog(
-      context: context!,
+      context: Get.context!,
       builder: (BuildContext context) {
         return CupertinoAlertDialog(
           actions: actions,
