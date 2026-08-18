@@ -57,6 +57,68 @@ class MainWidget {
     );
   }
 
+  Widget richText({
+    required List<InlineSpan>? children,
+    TextStyle? defaultTextStyle,
+    int? maxLines,
+    TextOverflow? overflow,
+    Color? selectionColor,
+    bool? softWrap,
+    TextStyle? style,
+    TextAlign? textAlign,
+    TextDirection? textDirection,
+  }) {
+    TextOverflow dOverflow = TextOverflow.clip;
+    bool dSoftWrap = true;
+    TextAlign dTextAlign = TextAlign.left;
+
+    return RichText(
+      maxLines: maxLines,
+      overflow: overflow ?? dOverflow,
+      selectionColor: selectionColor,
+      softWrap: softWrap ?? dSoftWrap,
+      textAlign: dTextAlign,
+      textDirection: textDirection,
+      text: TextSpan(
+        style: (defaultTextStyle ?? _dStyle),
+        children: children,
+      ),
+    );
+  }
+
+  TextSpan textSpan(
+    String text, {
+    TextStyle? style,
+    Color? color,
+    TextDecoration? decoration,
+    Color? decorationColor,
+    TextDecorationStyle? decorationStyle,
+    double? decorationThickness,
+    double? fontSize,
+    FontWeight? fontWeight,
+    double? height,
+    double letterSpacing = 0.25,
+    List<Shadow>? shadows,
+    double? wordSpacing,
+  }) {
+    return TextSpan(
+      style: (style ?? _dStyle).copyWith(
+        color: color,
+        decoration: decoration,
+        decorationColor: decorationColor,
+        decorationStyle: decorationStyle,
+        decorationThickness: decorationThickness,
+        fontSize: fontSize,
+        fontWeight: fontWeight,
+        height: height,
+        letterSpacing: letterSpacing,
+        shadows: shadows,
+        wordSpacing: wordSpacing,
+      ),
+      text: text,
+    );
+  }
+
   Widget button({
     required Function() onPressed,
     required Widget child,

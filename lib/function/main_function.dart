@@ -1,13 +1,15 @@
 import 'dart:developer' as dev;
 
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 part 'navigation_function.dart';
 part 'overlay_function.dart';
+part 'flutter_secure_storage_function.dart';
 
-class MainFunction with NavigationFunction, OverlayFunction {
+class MainFunction with NavigationFunction, OverlayFunction, SecureStorage {
   static final MainFunction _instance = MainFunction._internal();
   MainFunction._internal();
   factory MainFunction() => _instance;

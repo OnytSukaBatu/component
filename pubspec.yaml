@@ -1,7 +1,7 @@
 name: main
 description: ""
 publish_to: 'none'
-version: 0.0.2+2
+version: 0.0.3+3
 
 environment:
   sdk: ^3.11.0
@@ -9,7 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cupertino_icons: ^1.0.8
+  flutter_secure_storage: ^11.0.0
   get: ^4.7.3
 
 dev_dependencies:
