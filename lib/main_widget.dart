@@ -673,6 +673,16 @@ class MainWidget {
       toggleable: toggleable,
     );
   }
+
+  Widget gap({
+    double? height,
+    double? width,
+  }) {
+    return SizedBox(
+      height: height,
+      width: width,
+    );
+  }
 }
 
 MainWidget get w => MainWidget._instance;
