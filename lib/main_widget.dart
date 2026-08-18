@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MainWidget {
   static final MainWidget _instance = MainWidget._internal();
   MainWidget._internal();
   factory MainWidget() => _instance;
 
-  final TextStyle _dStyle = TextStyle(
+  final TextStyle _dStyle = GoogleFonts.plusJakartaSans(
     fontSize: 14,
     fontWeight: FontWeight.normal,
     letterSpacing: 0.25,
@@ -268,6 +269,9 @@ class MainWidget {
     BorderSide? focusedErrorBorderSide,
     Color? focusedErrorBorderColor,
     double? focusedErrorBorderWidth,
+    Color? textColor,
+    double? fontSize,
+    FontWeight? fontWeight,
   }) {
     double dCursorWidth = 2.0;
     String dObscuringCharacter = '•';
@@ -416,7 +420,11 @@ class MainWidget {
       onTap: onTap,
       onTapOutside: onTapOutside ?? dOnTapOutside,
       readOnly: readOnly,
-      style: style ?? _dStyle,
+      style: (style ?? _dStyle).copyWith(
+        color: textColor,
+        fontSize: fontSize,
+        fontWeight: fontWeight,
+      ),
       textAlign: textAlign ?? dTextAlign,
       textDirection: textDirection,
       validator: validator,

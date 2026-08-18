@@ -1,7 +1,7 @@
 name: main
 description: ""
 publish_to: 'none'
-version: 0.0.4+4
+version: 0.0.5+5
 
 environment:
   sdk: ^3.11.0
@@ -11,6 +11,7 @@ dependencies:
     sdk: flutter
   flutter_secure_storage: ^11.0.0
   get: ^4.7.3
+  google_fonts: ^8.2.1
 
 dev_dependencies:
   flutter_test:
