@@ -6,14 +6,14 @@ mixin NavigationFunction {
   }
 
   Future<T?> to<T>(Widget page) async {
-    return Get.to(page);
+    return Get.to(() => page);
   }
 
   Future<T?> off<TO, T>(Widget page) async {
-    return Get.off(page);
+    return Get.off(() => page);
   }
 
   Future<T?> offAll<T>(Widget page) async {
-    return Get.offAll(page);
+    return Get.offAll(() => page);
   }
 }
