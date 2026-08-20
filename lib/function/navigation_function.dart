@@ -5,15 +5,15 @@ mixin NavigationFunction {
     return Get.back(result: result);
   }
 
-  Future<T?> to<T>(Widget page) async {
-    return Get.to(() => page);
+  Future<T?> to<T>(dynamic page) async {
+    return await Get.to(() => page);
   }
 
-  Future<T?> off<TO, T>(Widget page) async {
-    return Get.off(() => page);
+  Future<T?> off<TO, T>(dynamic page) async {
+    return await Get.off(() => page);
   }
 
-  Future<T?> offAll<T>(Widget page) async {
-    return Get.offAll(() => page);
+  Future<T?> offAll<T>(dynamic page) async {
+    return await Get.offAll(() => page);
   }
 }
